@@ -9,7 +9,7 @@
         
         h1 {
             color: rgb(50, 232, 15);
-            font-size: 60px;
+            font-size: 50px;
         }
         body {
             background-color: rgb(164, 99, 255);
@@ -48,15 +48,23 @@
     <p>Hi Guys, you guys are now on the web! <em>Hope you like being famous</em> <strong>You also should learn about web development!</strong> I am going to create a border around this paragraph so that I can show you different styles.</p>
 	</div>
     
-    <h3>Favorite Foods</h3>
+    <h3 id="yo">Favorite Foods</h3>
   
   <div id="favlist">
     <ul>
-        <li>Pizssza!</li>
+        <li>Pizzsa!</li>
         <li>McDonalds!</li>
         <li>Chocolate!</li>
     </ul>
       </div>  
-    <img src="https://user-images.githubusercontent.com/59029735/71491550-8c6ee900-27ee-11ea-9786-c300ccc08e79.PNG" alt="Jay and Gia with Sami">
+    <img id="jaypic" src="https://user-images.githubusercontent.com/59029735/71491550-8c6ee900-27ee-11ea-9786-c300ccc08e79.PNG" alt="Jay and Gia with Sami">
     </body>
+  <script>
+      var jayEl = document.getElementById("jaypic");
+      var changeEl = document.getElementById("yo");
+            var onPicClick = function () {
+                changeEl.innerHTML = "I Clicked on My Picture!!";
+            }
+            jayEl.addEventListener("click", onPicClick);
+  </script>
 </html>
