@@ -15,7 +15,7 @@
             background-color: rgb(164, 99, 255);
         }
 
-        #infobox {
+        .infobox {
 		background: rgb(230, 230, 230);
 		font-size: 20px;
 		width: 70%;
@@ -44,27 +44,42 @@
          
     <h2>Basic info</h2>
     
-	<div id="infobox">
+	<div class="infobox">
     <p>Hi Guys, you guys are now on the web! <em>Hope you like being famous</em> <strong>You also should learn about web development!</strong> I am going to create a border around this paragraph so that I can show you different styles.</p>
 	</div>
     
-    <h3 id="yo">Favorite Foods</h3>
+    <h3 id="yo">Mad Libs. Please fill out the forms Below and then Click the Button:</h3>
   
   <div id="favlist">
     <ul>
-        <li>Pizzsa!</li>
-        <li>McDonalds!</li>
-        <li>Chocolate!</li>
+      <li>Scary Animal: <input type="text" id="noun"></li>
+      <li>Adjective: <input type="text" id="adjective"></li>
+      <li>Your Name: <input type="text" id="person"></li>
+      <li>Favorite Food: <input type="text" id="food"></li>
+      <li>School You go to: <input type="text" id="school"></li>
+      <li>Sibling's Name: <input type="text" id="sibling"></li>
     </ul>
-      </div>  
+      <button id="lib-button">Press Button to See the Story!</button>
+    <p>Generated story: 
+    <span id="story"</span>
+    </p>
+      </div>
     <img id="jaypic" src="https://user-images.githubusercontent.com/59029735/71491550-8c6ee900-27ee-11ea-9786-c300ccc08e79.PNG" alt="Jay and Gia with Sami">
     </body>
-  <script>
-      var jayEl = document.getElementById("jaypic");
-      var changeEl = document.getElementById("yo");
-            var onPicClick = function () {
-                changeEl.innerHTML = "I Clicked on My Picture!!";
-            }
-            jayEl.addEventListener("click", onPicClick);
-  </script>
+    <script>
+        var libButton = document.getElementById('lib-button');
+        var libIt = function() {
+            var storyDiv = document.getElementById("story");
+            var noun = document.getElementById("noun").value;
+            var adj = document.getElementById("adjective").value;
+            var per = document.getElementById("person").value;
+            var food = document.getElementById("food").value;
+            var school = document.getElementById("school").value;
+            var sibling = document.getElementById("sibling").value;
+            storyDiv.innerHTML = "One day a big " + adj + " " + noun + " decided to go the the town center and cause problems.  All the towns' people were kind of shocked to see " + per + " come along and destory the " + noun + ". " + per + " was truly a hero!" + " The next day at " + school + " all of the kids and the teachers celebrated the marvelous outcome with lots of " + food + ". But " + sibling + " got very jealous and threw the " + food + " on the floor and stomped all over it!";
+            
+        };
+        libButton.addEventListener('click', libIt);
+        
+    </script>
 </html>
