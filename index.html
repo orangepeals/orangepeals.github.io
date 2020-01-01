@@ -14,18 +14,16 @@
         body {
             background-color: rgb(164, 99, 255);
         }
-
         .infobox {
 		background: rgb(230, 230, 230);
 		font-size: 20px;
 		width: 70%;
-		height: 180px;
+		height: 120px;
 		overflow-y: auto;
 		margin 15px 0px 10px 6px;
 		border: 10px solid rgb(161, 161, 161);
 		padding: 10px;
 	}
-
       #favlist{
         font-size: 20px;
       }
@@ -60,7 +58,7 @@
       <li>Sibling's Name: <input type="text" id="sibling"></li>
     </ul>
       <button id="lib-button">Press Button to See the Story!</button>
-    <p>Generated story: 
+    <p>Checkout the Story: 
     <span id="story"</span>
     </p>
       </div>
@@ -80,6 +78,21 @@
             
         };
         libButton.addEventListener('click', libIt);
-        
+
+//animating the picture size
+      var jaypic = document.getElementById("jaypic");
+      jaypic.style.width = "100px";
+      var makeItBigger = function() {
+        var newWidth = parseFloat(jaypic.style.width);
+        if (newWidth < 500) {
+          jaypic.style.width = (parseFloat(jaypic.style.width) + 1) + "px";
+          } else {
+            jaypic.style.width = "100px";
+          };
+      };
+
+      window.setInterval(makeItBigger, 1000/30);
+      
+  
     </script>
 </html>
